@@ -1,0 +1,16 @@
+[
+    {
+        "tag": "RL-board [1]",
+        "port": "/dev/ttyUSB0",
+        "baudrate": 115200,
+        "address": 1,
+        "timeout": 2
+    },
+    {
+        "tag": "RL-board [2]",
+        "port": "/dev/ttyUSB0",
+        "baudrate": 115200,
+        "address": 2,
+        "timeout": 2
+    }
+]

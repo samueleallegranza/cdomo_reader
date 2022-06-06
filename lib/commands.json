@@ -1,0 +1,6 @@
+{
+    "read_inputs" : {
+        "hex_cmd": "52040010",
+        "crc": true
+    }
+}

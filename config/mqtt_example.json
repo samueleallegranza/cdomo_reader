@@ -1,0 +1,6 @@
+{
+    "ip": "127.0.0.1",
+    "port": 1883,
+    "user": "user1",
+    "password": "s3cr3tp455w0rd"
+}

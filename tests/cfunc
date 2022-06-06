@@ -1,0 +1,28 @@
+uint16_t BUS::pec15(
+			uint8_t *data, //Array of data that will be used to calculate  a PEC
+			uint16_t len //Number of bytes that will be used to calculate a PEC
+)
+{
+
+    uint16_t  remainder = 16;//PEC_SEED;
+    uint16_t polynom = 0x4599;//x^15 + x^14 + x^10 + x^8 + x^7 + x^4 + x ^3 + 1 <- the CRC15 polynomial
+
+    for (int pbyte = 0; pbyte < len; ++pbyte)
+    {
+    	remainder ^= data[pbyte] << 7;
+    	for (int bit = 8; bit > 0; --bit)
+        {
+            if ((remainder & 0x4000) > 0)//equivalent to remainder & 2^14 simply check for MSB
+            {
+                remainder = ((remainder << 1)) ;
+                remainder = (remainder ^ polynom);
+            }
+            else
+            {
+                remainder = ((remainder << 1));
+            }
+        }
+    }
+
+    return (remainder*2);
+}
